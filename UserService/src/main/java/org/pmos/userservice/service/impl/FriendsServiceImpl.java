@@ -5,12 +5,12 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.websocketchat.websocketchat.mapper.FriendsMapper;
-import org.websocketchat.websocketchat.mapper.UserMapper;
-import org.websocketchat.websocketchat.pojo.Friends;
-import org.websocketchat.websocketchat.pojo.Result;
-import org.websocketchat.websocketchat.pojo.Users;
-import org.websocketchat.websocketchat.service.FriendsService;
+import org.pmos.userservice.mapper.FriendsMapper;
+import org.pmos.userservice.mapper.UserMapper;
+import org.pmos.userservice.pojo.Friends;
+import org.pmos.userservice.pojo.Result;
+import org.pmos.userservice.pojo.Users;
+import org.pmos.userservice.service.FriendsService;
 
 import java.util.List;
 import java.util.Objects;

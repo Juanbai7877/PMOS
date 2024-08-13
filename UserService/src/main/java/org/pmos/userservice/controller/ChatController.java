@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.websocketchat.websocketchat.pojo.LeaveMessage;
-import org.websocketchat.websocketchat.pojo.Result;
-import org.websocketchat.websocketchat.service.ChatService;
+import org.pmos.userservice.pojo.LeaveMessage;
+import org.pmos.userservice.pojo.Result;
+import org.pmos.userservice.service.ChatService;
 
 /**
  * @author ALL

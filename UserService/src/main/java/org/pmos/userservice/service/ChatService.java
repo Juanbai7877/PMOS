@@ -1,7 +1,7 @@
 package org.pmos.userservice.service;
 
-import org.websocketchat.websocketchat.pojo.LeaveMessage;
-import org.websocketchat.websocketchat.pojo.Result;
+import org.pmos.userservice.pojo.LeaveMessage;
+import org.pmos.userservice.pojo.Result;
 
 /**
  * @author ALL

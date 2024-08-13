@@ -1,6 +1,6 @@
 package org.pmos.userservice.service;
 
-import org.websocketchat.websocketchat.pojo.Result;
+import org.pmos.userservice.pojo.Result;
 
 /**
  * @author ALL

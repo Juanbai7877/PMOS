@@ -2,7 +2,7 @@ package org.pmos.userservice.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.websocketchat.websocketchat.service.GroupMessagesService;
+import org.pmos.userservice.service.GroupMessagesService;
 
 /**
  * @author ALL

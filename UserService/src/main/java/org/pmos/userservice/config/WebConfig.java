@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.websocketchat.websocketchat.interceptors.LoginInterceptor;
-import org.websocketchat.websocketchat.interceptors.RefreshTokenInterceptor;
+import org.pmos.userservice.interceptors.LoginInterceptor;
+import org.pmos.userservice.interceptors.RefreshTokenInterceptor;
 
 /**
  * @author ALL

@@ -5,9 +5,9 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.websocketchat.websocketchat.pojo.Result;
-import org.websocketchat.websocketchat.service.GroupMessagesService;
-import org.websocketchat.websocketchat.service.GroupsService;
+import org.pmos.userservice.pojo.Result;
+import org.pmos.userservice.service.GroupMessagesService;
+import org.pmos.userservice.service.GroupsService;
 
 /**
  * @author ALL

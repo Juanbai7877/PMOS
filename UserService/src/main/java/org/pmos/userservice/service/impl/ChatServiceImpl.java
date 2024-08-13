@@ -3,9 +3,9 @@ package org.pmos.userservice.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.websocketchat.websocketchat.mapper.*;
-import org.websocketchat.websocketchat.pojo.*;
-import org.websocketchat.websocketchat.service.ChatService;
+import org.pmos.userservice.mapper.*;
+import org.pmos.userservice.pojo.*;
+import org.pmos.userservice.service.ChatService;
 
 import java.util.List;
 import java.util.Objects;

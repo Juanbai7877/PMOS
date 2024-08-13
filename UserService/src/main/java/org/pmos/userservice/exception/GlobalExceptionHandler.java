@@ -3,7 +3,7 @@ package org.pmos.userservice.exception;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.websocketchat.websocketchat.pojo.Result;
+import org.pmos.userservice.pojo.Result;
 
 /**
  * @author ALL

@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.websocketchat.websocketchat.pojo.Users;
+import org.pmos.userservice.pojo.Users;
 
 import java.util.List;
 

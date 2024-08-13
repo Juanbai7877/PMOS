@@ -1,12 +1,12 @@
 package org.pmos.userservice.controller;
 
+import org.pmos.userservice.service.FriendsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.websocketchat.websocketchat.pojo.Result;
-import org.websocketchat.websocketchat.service.FriendsService;
+
 
 /**
  * @author ALL

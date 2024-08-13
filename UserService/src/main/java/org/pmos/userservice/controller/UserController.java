@@ -10,11 +10,11 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.websocketchat.websocketchat.pojo.Result;
-import org.websocketchat.websocketchat.pojo.Users;
-import org.websocketchat.websocketchat.service.UserService;
-import org.websocketchat.websocketchat.utils.SHAUtil;
-import org.websocketchat.websocketchat.utils.ThreadLocalUtil;
+import org.pmos.userservice.pojo.Result;
+import org.pmos.userservice.pojo.Users;
+import org.pmos.userservice.service.UserService;
+import org.pmos.userservice.utils.SHAUtil;
+import org.pmos.userservice.utils.ThreadLocalUtil;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;

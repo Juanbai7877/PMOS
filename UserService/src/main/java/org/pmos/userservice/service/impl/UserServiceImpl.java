@@ -10,12 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import org.websocketchat.websocketchat.mapper.UserMapper;
-import org.websocketchat.websocketchat.pojo.Result;
-import org.websocketchat.websocketchat.pojo.UserWithToken;
-import org.websocketchat.websocketchat.pojo.Users;
-import org.websocketchat.websocketchat.service.UserService;
-import org.websocketchat.websocketchat.utils.*;
+import org.pmos.userservice.mapper.UserMapper;
+import org.pmos.userservice.pojo.Result;
+import org.pmos.userservice.pojo.UserWithToken;
+import org.pmos.userservice.pojo.Users;
+import org.pmos.userservice.service.UserService;
+import org.pmos.userservice.utils.*;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
@@ -26,8 +26,8 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import static org.websocketchat.websocketchat.utils.RedisConstants.*;
-import static org.websocketchat.websocketchat.utils.SystemConstants.USER_NICK_NAME_PREFIX;
+import static org.pmos.userservice.utils.RedisConstants.*;
+import static org.pmos.userservice.utils.SystemConstants.USER_NICK_NAME_PREFIX;
 
 
 /**

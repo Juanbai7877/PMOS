@@ -1,8 +1,8 @@
 package org.pmos.userservice.service;
 
 import jakarta.servlet.http.HttpSession;
-import org.websocketchat.websocketchat.pojo.Result;
-import org.websocketchat.websocketchat.pojo.Users;
+import org.pmos.userservice.pojo.Result;
+import org.pmos.userservice.pojo.Users;
 
 import java.security.NoSuchAlgorithmException;
 

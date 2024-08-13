@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: UserService
+  data:
+    redis:
+      #      host: 192.168.126.128
+  #    host: redis
+      host: 43.139.99.4
+      port: 6379
+      password: pmos@123
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    #    url: jdbc:postgresql://192.168.126.128:8888/wchat
+    #    url: jdbc:postgresql://43.139.99.4:8888/wchat
+    url: jdbc:postgresql://opengauss:5432/wchat
+    username: gaussdb
+    password: Pmos@123
+
+  #    邮箱服务
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: websocketchat@163.com
+    password: SSWNEWLCZUZBMRBJ
+    protocol: smtp
+    properties:
+      mail:
+        debug: true
+  #        smtp:
+  #          ssl:
+  #            trust: smtp.163.com
+  #          auth: true
+  #          starttls:
+  #            enable: true
+  #            required: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        web=DEBUG:
+server:
+  port: 8081
+
+
+

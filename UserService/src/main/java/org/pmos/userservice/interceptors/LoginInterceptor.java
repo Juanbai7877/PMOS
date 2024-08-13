@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.websocketchat.websocketchat.dto.UserDTO;
-import org.websocketchat.websocketchat.utils.ThreadLocalUtil;
+import org.pmos.userservice.dto.UserDTO;
+import org.pmos.userservice.utils.ThreadLocalUtil;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static org.websocketchat.websocketchat.utils.RedisConstants.LOGIN_USER_KEY;
-import static org.websocketchat.websocketchat.utils.RedisConstants.LOGIN_USER_TTL;
+import static org.pmos.userservice.utils.RedisConstants.LOGIN_USER_KEY;
+import static org.pmos.userservice.utils.RedisConstants.LOGIN_USER_TTL;
 
 /**
  * @author ALL

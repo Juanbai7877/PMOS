@@ -3,7 +3,7 @@ package org.pmos.userservice.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.websocketchat.websocketchat.pojo.UserGroups;
+import org.pmos.userservice.pojo.UserGroups;
 
 import java.util.List;
 
