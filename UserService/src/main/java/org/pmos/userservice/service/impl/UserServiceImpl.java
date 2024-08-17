@@ -192,7 +192,7 @@ public class UserServiceImpl implements UserService {
     public Result update(Users user) {
         user.setUpdatedTime(Timestamp.valueOf(LocalDateTime.now()));
         Users byUserName = findByUserName(user.getUserName());
-        if(byUserName!=null&&!byUserName.getUserId().equals(user.getUserId())){
+        if(byUserName!=null&&!(byUserName.getUserId()==(user.getUserId()))){
             return Result.error("用户已存在");
         }
         userMapper.updateById(user);
