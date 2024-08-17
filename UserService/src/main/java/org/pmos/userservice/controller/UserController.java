@@ -2,8 +2,6 @@ package org.pmos.userservice.controller;
 
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.constraints.Pattern;
-import org.hibernate.validator.constraints.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -16,6 +14,7 @@ import org.pmos.userservice.service.UserService;
 import org.pmos.userservice.utils.SHAUtil;
 import org.pmos.userservice.utils.ThreadLocalUtil;
 
+import javax.validation.constraints.Pattern;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
@@ -36,7 +35,7 @@ public class UserController {
     private StringRedisTemplate stringRedisTemplate;
 
     @PostMapping("/registerByPhone")
-    public Result register(@Pattern(regexp = "^\\S{5,32}$")String userName, @Pattern(regexp = "^\\S{5,16}$")String password, String rePassword,@Pattern(regexp = "/\\d{3}-\\d{8}|\\d{4}-\\d{7}|^1(3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$")String phone,String code) throws NoSuchAlgorithmException {
+    public Result register(@Pattern(regexp = "^\\S{5,32}$")String userName, @Pattern(regexp = "^\\S{5,16}$")String password, String rePassword, @Pattern(regexp = "/\\d{3}-\\d{8}|\\d{4}-\\d{7}|^1(3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$")String phone, String code) throws NoSuchAlgorithmException {
             return userService.register(userName,password,rePassword,phone,code);
     }
 
@@ -95,7 +94,7 @@ public class UserController {
     }
 
     @PatchMapping("/updateAvatar")
-    public Result updateAvatar(@RequestParam @URL String avatarUrl) {
+    public Result updateAvatar(String avatarUrl) {
         userService.updateAvatar(avatarUrl);
         return Result.success();
     }

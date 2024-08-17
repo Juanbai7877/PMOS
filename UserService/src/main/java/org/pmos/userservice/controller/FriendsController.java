@@ -1,5 +1,6 @@
 package org.pmos.userservice.controller;
 
+import org.pmos.userservice.pojo.Result;
 import org.pmos.userservice.service.FriendsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
