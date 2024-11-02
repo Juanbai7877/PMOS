@@ -7,7 +7,6 @@ spring:
       #    host: redis
       host: 43.139.99.4
       port: 6379
-      password: pmos@123
   cloud:
     gateway:
       routes:
