@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description
  */
 @RestController
-@RequestMapping("/Hello")
+@RequestMapping("/user/Hello")
 public class HelloController {
     @Autowired
     private RocketMQTemplate rocketMQTemplate;

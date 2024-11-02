@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Gateway
+  data:
+    redis:
+      #      host: 192.168.126.128
+      #    host: redis
+      host: 43.139.99.4
+      port: 6379
+      password: pmos@123
+  cloud:
+    gateway:
+      routes:
+        - id: UserService
+          uri: https://localhost:8081
+          predicates:
+            - Path=/user

@@ -17,7 +17,7 @@ import org.pmos.userservice.service.ChatService;
  */
 @RestController
 @Validated
-@RequestMapping("/chat")
+@RequestMapping("/user/chat")
 public class ChatController {
 
     @Autowired

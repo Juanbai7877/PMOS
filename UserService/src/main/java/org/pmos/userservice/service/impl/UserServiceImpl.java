@@ -1,5 +1,7 @@
 package org.pmos.userservice.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
 import cn.hutool.core.lang.Validator;
 import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -7,8 +9,10 @@ import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.pmos.userservice.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.pmos.userservice.mapper.UserMapper;
@@ -21,10 +25,7 @@ import org.pmos.userservice.utils.*;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static org.pmos.userservice.utils.RedisConstants.*;
@@ -56,6 +57,8 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
+    private RedisTemplate redisTemplate;
+
     @Override
     public Users findByUserName(String userName) {
         Users u=userMapper.findByUserName(userName);
@@ -84,6 +87,7 @@ public class UserServiceImpl implements UserService {
         user.setUserId(t_user.getUserId());
         user.setToken(token);
         user.setNickName(t_user.getNickName());
+
         return Result.success(user);
     }
 
@@ -111,16 +115,14 @@ public class UserServiceImpl implements UserService {
         String tokenKey = LOGIN_USER_KEY + token;
 
 //        // 7.2.将User对象转为HashMap存储
-//        UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
-//        Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
-//                CopyOptions.create()
-//                        .setIgnoreNullValue(true)
-//                        .setFieldValueEditor((fieldName, fieldValue) -> fieldValue.toString()));
-//        stringRedisTemplate.opsForHash().putAll(tokenKey, userMap);
-//        // 7.4.设置token有效期
-//        stringRedisTemplate.expire(tokenKey, LOGIN_USER_TTL, TimeUnit.MINUTES);
-//        // 7.4.设置token有效期
-//        stringRedisTemplate.expire(tokenKey, LOGIN_USER_TTL, TimeUnit.MINUTES);
+        UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
+        Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
+                CopyOptions.create()
+                        .setIgnoreNullValue(true)
+                        .setFieldValueEditor((fieldName, fieldValue) -> fieldValue.toString()));
+        stringRedisTemplate.opsForHash().putAll(tokenKey, userMap);
+        // 7.4.设置token有效期
+        stringRedisTemplate.expire(tokenKey, LOGIN_USER_TTL, TimeUnit.MINUTES);
         return token;
 
     }

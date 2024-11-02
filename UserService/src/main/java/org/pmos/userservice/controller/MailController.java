@@ -12,7 +12,7 @@ import org.pmos.userservice.utils.SendMailUtils;
  * @Description
  */
 @RestController
-@RequestMapping("/mail")
+@RequestMapping("/user/mail")
 public class MailController {
     @Autowired
     SendMailUtils sendMailUtils;

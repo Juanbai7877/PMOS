@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Validated
-@RequestMapping("/friend")
+@RequestMapping("/user/friend")
 public class FriendsController {
     @Autowired
     private FriendsService friendsService;

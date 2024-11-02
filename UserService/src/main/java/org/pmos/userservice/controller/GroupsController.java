@@ -16,7 +16,7 @@ import org.pmos.userservice.service.GroupsService;
  */
 @RestController
 @Validated
-@RequestMapping("/groups")
+@RequestMapping("/user/groups")
 public class GroupsController {
     @Autowired
     private GroupsService groupsService;

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SmsController {
 
-    @RequestMapping("/send/{phone}")
+    @RequestMapping("/user/send/{phone}")
     public void send (@PathVariable("phone") String phone) throws Exception {
 
     }
