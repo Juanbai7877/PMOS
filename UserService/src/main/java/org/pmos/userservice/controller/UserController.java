@@ -65,11 +65,6 @@ public class UserController {
         return userService.resetPassword(userName,oldPassword,password,rePassword);
     }
 
-//    @GetMapping("/loginByMail")
-//    public Result loginByMail(@Pattern(regexp = "^\\S{5,32}$")String userName, @Pattern(regexp = "^\\S{5,16}$")String password, HttpSession session) throws NoSuchAlgorithmException {
-//        return userService.loginByMail(userName,password, session);
-//    }
-
 
     @GetMapping("/loginByPhone")
     public Result loginByPhone(@Pattern(regexp = "^\\S{5,32}$")String phone,String code){

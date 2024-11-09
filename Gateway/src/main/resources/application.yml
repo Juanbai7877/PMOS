@@ -21,3 +21,14 @@ spring:
             - Path=/order/*
 server:
   port: 8088
+pmos:
+  jwt:
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /user/login
+      - /user/login**
+      - /user/register**
+      - /items/**
+      - /hi

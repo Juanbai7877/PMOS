@@ -80,6 +80,7 @@ public class UserServiceImpl implements UserService {
         if(!t_user.getPasswordHash().equals(SHAUtil.SHA256Encrypt(password))){
             return Result.error("密码错误");
         }
+
         String token = createAndSetToken(t_user);
         session.setAttribute("user", t_user.getUserName());
         UserWithToken user=new UserWithToken();
@@ -112,9 +113,9 @@ public class UserServiceImpl implements UserService {
 
         String token = UUID.randomUUID().toString().replace("-", "");
         // 7.3.存储
-        String tokenKey = LOGIN_USER_KEY + token;
+        String tokenKey = LOGIN_USER_KEY+"-"+ user.getUserId() +"-"+ token;
 
-//        // 7.2.将User对象转为HashMap存储
+        // 7.2.将User对象转为HashMap存储
         UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
         Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
                 CopyOptions.create()
@@ -123,7 +124,7 @@ public class UserServiceImpl implements UserService {
         stringRedisTemplate.opsForHash().putAll(tokenKey, userMap);
         // 7.4.设置token有效期
         stringRedisTemplate.expire(tokenKey, LOGIN_USER_TTL, TimeUnit.MINUTES);
-        return token;
+        return tokenKey;
 
     }
 
@@ -250,35 +251,6 @@ public class UserServiceImpl implements UserService {
 
         //TODO 5.发送验证码
         log.debug("发送短信验证码成功，验证码：{}", code);
-
-        //default 地域节点，默认就好  后面是 阿里云的 id和秘钥（这里记得去阿里云复制自己的id和秘钥哦）
-
-//        DefaultProfile profile = DefaultProfile.getProfile("default", accessKeyId, accessKeySecret);
-//        IAcsClient client = new DefaultAcsClient(profile);
-//
-//        //这里不能修改
-//        CommonRequest request = new CommonRequest();
-//        //request.setProtocol(ProtocolType.HTTPS);
-//        request.setMethod(MethodType.POST);
-//        request.setDomain("dysmsapi.aliyuncs.com");
-//        request.setVersion("2017-05-25");
-//        request.setAction("SendSms");
-//
-//        Map<String,String>params=new HashMap<>();
-//        params.put("code", code);
-//
-
-//        request.putQueryParameter("PhoneNumbers", phone);                    //手机号
-//        request.putQueryParameter("SignName", "阿里云短信测试");    //申请阿里云 签名名称（暂时用阿里云测试的，自己还不能注册签名）
-//        request.putQueryParameter("TemplateCode", "SMS_154950909"); //申请阿里云 模板code（用的也是阿里云测试的）
-//        request.putQueryParameter("TemplateParam", JSONObject.toJSONString(params));
-//        try {
-//            CommonResponse response = client.getCommonResponse(request);
-//            System.out.println(response.getData());
-//            return Result.success("OK");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
 
         //返回ok
         return Result.success("OK");
