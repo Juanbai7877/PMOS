@@ -14,11 +14,14 @@
         <option value="$PROJECT_DIR$/SocialService/pom.xml" />
         <option value="$PROJECT_DIR$/CommonService/common-starter/pom.xml" />
         <option value="$PROJECT_DIR$/Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/CommonService/payService/pom.xml" />
+        <option value="$PROJECT_DIR$/payService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/CommonService/common-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/CommonService/payService/pom.xml" />
       </set>
     </option>
   </component>

@@ -7,10 +7,17 @@ spring:
       #    host: redis
       host: 43.139.99.4
       port: 6379
+      password: pmos@123
   cloud:
     gateway:
       routes:
         - id: UserService
-          uri: https://localhost:8081
+          uri: http://localhost:8081
           predicates:
-            - Path=/user
+            - Path=/user/*
+        - id: OrderService
+          uri: http://localhost:8082
+          predicates:
+            - Path=/order/*
+server:
+  port: 8088
